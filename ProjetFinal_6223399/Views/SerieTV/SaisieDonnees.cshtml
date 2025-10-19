@@ -1,0 +1,29 @@
+﻿<a asp-action="Index" asp-controller="SerieTV">Retour à l'index</a>
+<br>
+<br>
+<form asp-action="UnGroupeEtSesPersonnages" asp-controller="SerieTV" method="get">
+    <h2>Variables pour la procédure</h2>
+    <div class="form-group mb-2">
+        <label for="groupeRecherche">Groupe</label>
+        <br>
+        <select class="form-control" id="groupeRecherche" name="groupeRecherche" required>
+            <option value="">Choisir un groupe</option>
+            @foreach (var groupe in (List<string>)ViewBag.Groupes)
+            {
+                <option value="@groupe">@groupe</option>
+            }
+        </select>
+    </div>
+    <div class="form-group mb-2">
+        <label for="statut">Statut</label>
+        <br>
+        <select class="form-control" id="statut" name="statut" required>
+            <option value="">Choisir un statut</option>
+            <option value="Vivant">Vivant</option>
+            <option value="Mort">Mort</option>
+            <option value="Inconnu">Inconnu</option>
+        </select>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-success">Afficher le résultat de la procédure</button>
+</form>

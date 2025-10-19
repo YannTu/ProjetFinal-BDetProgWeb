@@ -1,0 +1,14 @@
+﻿@model List<ProjetFinal_6223399.Models.Personnage>
+
+<a class="btn btn-primary" asp-action="Inscription" asp-controller="Utilisateurs">Inscription</a>
+<a class="btn btn-secondary" asp-action="Connexion" asp-controller="Utilisateurs">Connexion</a>
+<a class="btn btn-danger" asp-action="Deconnexion" asp-controller="Utilisateurs">Déconnexion</a>
+
+<h2>Bienvenue, @ViewData["utilisateur"]</h2>
+
+
+<div> 
+    <a asp-action="DetailsGroupe">Détails des groupes</a> | 
+    <a asp-action="SaisieDonnees">Procédure avec paramètres</a> |
+    <a asp-action="PersonnagesAvecImages">Personnages avec une image</a>
+</div>

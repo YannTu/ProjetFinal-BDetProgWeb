@@ -1,0 +1,13 @@
+1) Mettre à jour pour la version prerelease qui fonctionne avec .Net 8.0
+
+dotnet tool update evolve.tool -g --prerelease
+
+
+2) Migration
+
+evolve migrate sqlserver -c "Data Source=.;Initial Catalog=ProjetFinal_6223399;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False" -s Saisons -s Personnages -s Groupes -s Utilisateurs --target-version 1.6
+
+
+3) Scaffold
+
+dotnet ef dbcontext scaffold Name=ProjetFinal_6223399 Microsoft.EntityFrameworkCore.SqlServer -o Models --context-dir Data --data-annotations --force

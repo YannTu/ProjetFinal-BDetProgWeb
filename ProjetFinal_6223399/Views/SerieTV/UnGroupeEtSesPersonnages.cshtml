@@ -1,0 +1,73 @@
+﻿@model ProjetFinal_6223399.ViewModels.UnGroupeEtSesPersonnagesViewModel
+
+<a asp-action="Index" asp-controller="SerieTV">Retour à l'index</a>
+<br>
+<br>
+<a asp-action="SaisieDonnees">Procédure avec paramètres</a>
+<br>
+<br>
+
+@if (Model.Personnages.Any())
+{
+    <h2>Liste des personnages du groupe @Model.Groupe.Nom qui ont un statut @ViewData["statut"]</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Personnages.First().Prenom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Personnages.First().Nom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Personnages.First().Genre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Personnages.First().Ethnicite)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Personnages.First().AgeDebutSerie)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Personnages.First().AgeFinSerie)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Personnages.First().Statut)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Personnages)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Prenom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Genre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ethnicite)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AgeDebutSerie)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AgeFinSerie)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Statut)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h2>Aucun personnage du groupe @Model.Groupe.Nom a le statut @ViewData["statut"]</h2>
+}

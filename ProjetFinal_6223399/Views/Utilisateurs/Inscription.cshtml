@@ -1,0 +1,44 @@
+﻿@model ProjetFinal_6223399.ViewModels.InscriptionViewModel
+<a asp-action="Index" asp-controller="SerieTV">Retour à l'index</a>
+<br>
+<br>
+<h2>Inscription</h2>
+
+    <form asp-action="Inscription">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Pseudo" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Pseudo" class="form-control" />
+            <span asp-validation-for="Pseudo" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MotDePasse" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="MotDePasse" class="form-control" />
+            <span asp-validation-for="MotDePasse" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MotDePasseConfirmation" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="MotDePasseConfirmation" class="form-control" />
+            <span asp-validation-for="MotDePasseConfirmation" class="text-danger"></span>
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn btn-primary">S'inscrire</button>
+        </div>
+    </div>
+    </form>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

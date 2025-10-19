@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ProjetFinal_6223399.Models.VwDetailsGroupe>
+
+<a asp-action="Index" asp-controller="SerieTV">Retour à l'index</a>
+<br>
+<br>
+<h2>Détails des groupes</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().NomDuGroupe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().NomDuChef)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().NombreDHommes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().NombreDeFemmes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().NombreTotalDeMembres)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomDuGroupe)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomDuChef)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreDHommes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreDeFemmes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreTotalDeMembres)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
